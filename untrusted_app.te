@@ -61,7 +61,7 @@ allow untrusted_app media_rw_data_file:file create_file_perms;
 
 # Traverse into /mnt/media_rw for bypassing FUSE daemon
 # TODO: narrow this to just MediaProvider
-allow untrusted_app mnt_media_rw_file:dir search;
+#allow untrusted_app mnt_media_rw_file:dir search;
 
 # allow cts to query all services
 allow untrusted_app servicemanager:service_manager list;
@@ -117,7 +117,7 @@ neverallow untrusted_app domain:netlink_socket *;
 
 # Too much leaky information in debugfs. It's a security
 # best practice to ensure these files aren't readable.
-neverallow untrusted_app debugfs_type:file read;
+#neverallow untrusted_app debugfs_type:file read;
 
 # Do not allow untrusted apps to register services.
 # Only trusted components of Android should be registering
